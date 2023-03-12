@@ -22,9 +22,9 @@ const SideBar = () => {
           <li>
             <a
               href="#"
-              class="flex items-center p-2 text-base font-semibold rounded-lg hover:bg-[#E5F1FF] hover:text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD]"
+              class="flex items-center p-2 text-base font-semibold rounded-lg bg-[#E5F1FF] text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD]"
             >
-              <HomeIcon className="h-6 w-6" />
+              <HomeIcon className="h-6 w-6 text-[#0177FD]" />
               <span class="ml-3 mt-auto">Dashboard</span>
             </a>
           </li>
@@ -34,7 +34,7 @@ const SideBar = () => {
               href="#"
               class="flex items-center p-2 text-base font-semibold rounded-lg hover:bg-[#E5F1FF] hover:text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD]"
             >
-              <TicketIcon className="h-6 w-6" />
+              <TicketIcon className="h-6 w-6 text-gray-400 hover:text-[#0177FD]" />
               <span class="ml-3 mt-auto">Invoices</span>
             </a>
           </li>
@@ -44,7 +44,7 @@ const SideBar = () => {
               href="#"
               class="flex items-center p-2 text-base font-semibold rounded-lg hover:bg-[#E5F1FF] hover:text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD] "
             >
-              <ChatBubbleOvalLeftEllipsisIcon className="h-6 w-6" />
+              <ChatBubbleOvalLeftEllipsisIcon className="h-6 w-6 text-gray-400 hover:text-[#0177FD]" />
               <span class="flex-1 ml-3 whitespace-nowrap">Message</span>
               <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-white bg-blue-600 rounded-full">
                 5
@@ -57,7 +57,7 @@ const SideBar = () => {
               href="#"
               class="flex items-center p-2 text-base font-semibold rounded-lg hover:bg-[#E5F1FF] hover:text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD]"
             >
-              <WalletIcon className="h-6 w-6" />
+              <WalletIcon className="h-6 w-6 text-gray-400 hover:text-[#0177FD]" />
               <span class="ml-3 mt-auto">My Wallets</span>
             </a>
           </li>
@@ -67,7 +67,7 @@ const SideBar = () => {
               href="#"
               class="flex items-center p-2 text-base font-semibold rounded-lg hover:bg-[#E5F1FF] hover:text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD]"
             >
-              <ChartPieIcon className="h-6 w-6" />
+              <ChartPieIcon className="h-6 w-6 text-gray-400 hover:text-[#0177FD]" />
               <span class="ml-3 mt-auto">Activities</span>
             </a>
           </li>
@@ -77,7 +77,7 @@ const SideBar = () => {
               href="#"
               class="flex items-center p-2 text-base font-semibold rounded-lg hover:bg-[#E5F1FF] hover:text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD]"
             >
-              <ChartBarSquareIcon className="h-6 w-6" />
+              <ChartBarSquareIcon className="h-6 w-6 text-gray-400 hover:text-[#0177FD]" />
               <span class="ml-3 mt-auto">Analytics</span>
             </a>
           </li>
@@ -89,7 +89,7 @@ const SideBar = () => {
               href="#"
               class="flex items-center p-2 text-base font-semibold rounded-lg hover:bg-[#E5F1FF] hover:text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD]"
             >
-              <InformationCircleIcon className="h-6 w-6" />
+              <InformationCircleIcon className="h-6 w-6 text-gray-400 hover:text-[#0177FD]" />
               <span class="ml-3 mt-auto">Get Help</span>
             </a>
           </li>
@@ -99,7 +99,7 @@ const SideBar = () => {
               href="#"
               class="flex items-center p-2 text-base font-semibold rounded-lg hover:bg-[#E5F1FF] hover:text-[#0177FD] active:bg-[#E5F1FF] active:text-[#0177FD]"
             >
-              <Cog8ToothIcon className="h-6 w-6" />
+              <Cog8ToothIcon className="h-6 w-6 text-gray-400 hover:text-[#0177FD]" />
               <span class="ml-3 mt-auto">Settings</span>
             </a>
           </li>
