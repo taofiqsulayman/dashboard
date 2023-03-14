@@ -2,12 +2,17 @@ import React from "react";
 import creditCard from "../assets/card.png";
 import masterCardLogo from "../assets/mc_symbol.svg";
 import userImage from "../assets/profile-pic.png";
-import { ChevronDownIcon, PlusCircleIcon, ArrowUpOnSquareIcon, SquaresPlusIcon, TicketIcon } from "@heroicons/react/24/outline";
+import chart from "../assets/chart.png"
+import { ChevronDownIcon, PlusCircleIcon, ArrowUpOnSquareIcon, SquaresPlusIcon, TicketIcon, PencilIcon, MagnifyingGlassIcon, } from "@heroicons/react/24/outline";
 
 import {
   ArrowTrendingUpIcon,
   ChartBarSquareIcon,
   ChevronRightIcon,
+  UsersIcon,
+  BanknotesIcon,
+  GiftIcon,
+  ClockIcon
 } from "@heroicons/react/24/outline";
 
 
@@ -154,7 +159,7 @@ const Contents = () => {
         </div>
 
         <div class="flex flex-col gap-4 rounded-lg">
-          <div className="flex gap-8 pr-8">
+          <div className="flex gap-8 ">
             <div className="flex flex-col gap-4">
               <div className="flex justify-between items-center w-[550px]">
                 <h2 className="font-semibold">Money Flow</h2>
@@ -181,9 +186,31 @@ const Contents = () => {
                 </div>
               </div>
 
-              <div>CHART GOES HERE</div>
+              <div>
+                <img className="w-[550px]" src={chart} alt="chart" />
+              </div>
             </div>
-            <div className="w-[350px]"> SIDE CONTENT</div>
+            <div className="w-[360px]">
+              <div className="flex justify-between items-center">
+                <h2 className="font-semibold text-sm">Recent Contacts</h2>
+                <div className="flex gap-4">
+                  <PencilIcon className="h-4 w-4 text-gray-500" />
+                  <MagnifyingGlassIcon className="h-4 w-4 text-[#0177FB]" />
+                </div>
+              </div>
+              <p className="text-xs text-gray-500">18 recipients</p>
+              <div className="flex justify-between items-center">
+                {[...Array(5)].map((_, index) => (
+                  <img
+                    className="w-8 h-8 rounded-full"
+                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                    alt=""
+                    key={index}
+                  />
+                ))}
+                <ChevronRightIcon className="h-6 w-6 text-gray-500" />
+              </div>
+            </div>
           </div>
 
           <div className="w-full flex flex-col gap-8">
@@ -238,6 +265,63 @@ const Contents = () => {
               <p>*****36275</p>
               <p>+$223.00</p>
               <p className="text-[#61BB84] bg-[#EBFFF3] px-2 py-1">Success</p>
+            </div>
+          </div>
+
+          <div class="w-full p-10 bg-white border border-gray-200 rounded-lg shadow">
+            <h5 class="mb-2 text-xl font-semibold">Statistics</h5>
+            <div class="flex justify-between items-center gap-8 pt-8">
+              <a
+                href="#"
+                class="w-full sm:w-auto rounded-lg inline-flex gap-2 items-center justify-center py-2.5"
+              >
+                <div className="flex items-center justify-center rounded-full h-10 w-10 bg-[#EFECFD] text-[#7468E4]">
+                  <UsersIcon className="h-6 w-6" />
+                </div>
+                <div class="text-left">
+                  <div class="mb-1 text-sm font-semibold">220k</div>
+                  <div class="-mt-1 text-xs">Customers</div>
+                </div>
+              </a>
+
+              <a
+                href="#"
+                class="w-full sm:w-auto rounded-lg inline-flex gap-2 items-center justify-center py-2.5"
+              >
+                <div className="flex items-center justify-center rounded-full h-10 w-10 bg-[#E4F8FB] text-[#51D5EC]">
+                  <BanknotesIcon className="h-6 w-6" />
+                </div>
+                <div class="text-left">
+                  <div class="mb-1 text-sm font-semibold">230k</div>
+                  <div class="-mt-1 text-xs">Remittance</div>
+                </div>
+              </a>
+
+              <a
+                href="#"
+                class="w-full sm:w-auto rounded-lg inline-flex gap-2 items-center justify-center py-2.5"
+              >
+                <div className="flex items-center justify-center rounded-full h-10 w-10 bg-[#E5F7ED] text-[#22B573]">
+                  <GiftIcon className="h-6 w-6" />
+                </div>
+                <div class="text-left">
+                  <div class="mb-1 text-sm font-semibold">270k</div>
+                  <div class="-mt-1 text-xs">Donations</div>
+                </div>
+              </a>
+
+              <a
+                href="#"
+                class="w-full sm:w-auto rounded-lg inline-flex gap-2 items-center justify-center py-2.5"
+              >
+                <div className="flex items-center justify-center rounded-full h-10 w-10 bg-[#FDF1E2] text-[#FFB648]">
+                  <ClockIcon className="h-6 w-6" />
+                </div>
+                <div class="text-left">
+                  <div class="mb-1 text-sm font-semibold">130k</div>
+                  <div class="-mt-1 text-xs">Watchtime</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
