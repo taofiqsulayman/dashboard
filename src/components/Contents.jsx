@@ -26,9 +26,9 @@ import {
 
 const Contents = () => {
   return (
-    <div class="px-8 sm:ml-64 mt-14 h-full">
+    <div class="px-8 pb-8 sm:ml-64 mt-14 h-full">
       <h1 className="font-bold mb-4">My Card</h1>
-      <div class="flex flex-wrap gap-8 mb-4 h-full">
+      <div class="flex flex-wrap lg:flex-nowrap gap-8 mb-4 h-full">
         <div class="flex flex-col gap-6 rounded h-full w-full lg:w-[300px] mr-4">
           <img
             className="lg:h-[125px] lg:w-full"
@@ -165,10 +165,10 @@ const Contents = () => {
           </div>
         </div>
 
-        <div class="flex flex-col gap-4 rounded-lg">
+        <div class="flex flex-col gap-4 px-4 rounded-lg">
           <div className="flex flex-wrap gap-8">
             <div className="flex flex-col gap-4">
-              <div className="flex justify-between items-center w-[550px]">
+              <div className="flex justify-between items-center lg:w-[550px]">
                 <h2 className="font-semibold">Money Flow</h2>
                 <div className="flex gap-4">
                   <ArrowTrendingUpIcon className="h-6 w-6 text-gray-500" />
@@ -176,7 +176,7 @@ const Contents = () => {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center w-[550px]">
+              <div className="flex justify-between items-center lg:w-[550px]">
                 <div className="flex gap-4">
                   <div className="flex gap-2">
                     <ArrowTrendingUpIcon className="h-6 w-6 p-1 text-white bg-[#0177FB] rounded-full" />
@@ -251,7 +251,7 @@ const Contents = () => {
                   </div>
                 </div>
                 <div class="flex justify-between items-center gap-8 pt-2">
-                  <div class="w-full rounded-lg lg:inline-flex gap-2 items-center justify-center py-2.5">
+                  <div class="w-full rounded-lg inline-flex gap-2 items-center py-2.5">
                     <img
                       className="w-9 h-9 rounded-full"
                       src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
@@ -323,7 +323,7 @@ const Contents = () => {
             </div>
           </div>
 
-          <div class="w-full p-10 bg-white border border-gray-200 rounded-lg shadow">
+          <div class="w-full hidden lg:flex p-10 bg-white border border-gray-200 rounded-lg shadow">
             <h5 class="mb-2 text-xl font-semibold">Statistics</h5>
             <div class="flex justify-between items-center gap-8 pt-8">
               <a
