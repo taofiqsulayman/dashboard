@@ -1,5 +1,4 @@
 import React from "react";
-import creditCard from "../assets/card.png";
 import masterCardLogo from "../assets/mc_symbol.svg";
 import userImage from "../assets/profile-pic.png";
 import chart from "../assets/chart.png";
@@ -23,17 +22,30 @@ import {
   GiftIcon,
   ClockIcon,
 } from "@heroicons/react/24/outline";
+import DebitCard from "./DebitCard";
+import debitCardBg from "../assets/debitcard-bg.png";
+import NavBar from "./NavBar";
 
 const Contents = () => {
+
+    const cardNumber = "1234 5678 9012 3456";
+    const cardHolderName = "Carla Rossa";
+    const expiryDate = "12/23";
+    const cardType = "Visa";
+    const backgroundImage = debitCardBg;
+
   return (
-    <div class="px-8 pb-8 sm:ml-64 mt-14 h-full">
-      <h1 className="font-bold mb-4">My Card</h1>
+    <div class="h-full w-full pr-4">
+      <NavBar heading={"My Card"} />
+
       <div class="flex flex-wrap lg:flex-nowrap gap-8 mb-4 h-full">
-        <div class="flex flex-col gap-6 rounded h-full w-full lg:w-[300px] mr-4">
-          <img
-            className="lg:h-[125px] lg:w-full"
-            src={creditCard}
-            alt="credit card"
+        <div class="flex flex-col flex-1 gap-6 rounded h-full w-full px-8">
+          <DebitCard
+            cardNumber={cardNumber}
+            cardHolderName={cardHolderName}
+            expiryDate={expiryDate}
+            cardType={cardType}
+            backgroundImage={backgroundImage}
           />
           <p className="font-semibold text-xl">Send Money</p>
 
@@ -165,7 +177,7 @@ const Contents = () => {
           </div>
         </div>
 
-        <div class="flex flex-col gap-4 px-4 rounded-lg">
+        <div class="flex flex-col flex-auto gap-4 px-4 rounded-lg">
           <div className="flex flex-wrap gap-8">
             <div className="flex flex-col gap-4">
               <div className="flex justify-between items-center lg:w-[550px]">
