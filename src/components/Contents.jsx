@@ -1,22 +1,11 @@
 import React from "react";
 import masterCardLogo from "../assets/mc_symbol.svg";
 import userImage from "../assets/profile-pic.png";
-import chart from "../assets/chart.png";
-import {
-  ChevronDownIcon,
-  PlusCircleIcon,
-  ArrowUpOnSquareIcon,
-  SquaresPlusIcon,
-  TicketIcon,
-  PencilIcon,
-  MagnifyingGlassIcon,
-  ChatBubbleOvalLeftIcon
-} from "@heroicons/react/24/outline";
-
 import {
   ArrowTrendingUpIcon,
   ChartBarSquareIcon,
   ChevronRightIcon,
+  ChevronDownIcon,
   UsersIcon,
   BanknotesIcon,
   GiftIcon,
@@ -25,21 +14,26 @@ import {
 import DebitCard from "./DebitCard";
 import debitCardBg from "../assets/debitcard-bg.png";
 import NavBar from "./NavBar";
+import DebitCardTile from "./DebitCardTile";
+import CurrencyExchangeTile from "./CurrencyExchangeTile";
+import AvatarGroup from "./AvatarGroup";
+import BankActionsTile from "./BankActionsTile";
+import ChartArea from "./ChartArea";
+import RecentActivities from "./RecentActivities";
 
 const Contents = () => {
-
-    const cardNumber = "1234 5678 9012 3456";
-    const cardHolderName = "Carla Rossa";
-    const expiryDate = "12/23";
-    const cardType = "Visa";
-    const backgroundImage = debitCardBg;
+  const cardNumber = "1234 5678 9012 3456";
+  const cardHolderName = "Carla Rosser";
+  const expiryDate = "12/23";
+  const cardType = "Visa";
+  const backgroundImage = debitCardBg;
 
   return (
-    <div class="h-full w-full pr-4">
+    <div class="h-full w-full pr-8">
       <NavBar heading={"My Card"} />
 
-      <div class="flex flex-wrap lg:flex-nowrap gap-8 mb-4 h-full">
-        <div class="flex flex-col flex-1 gap-6 rounded h-full w-full px-8">
+      <div class="flex flex-wrap lg:flex-nowrap gap-8 mb-4 w-full h-full">
+        <div class="flex flex-col flex-1 gap-6 rounded h-full w-full pl-4 pr-2">
           <DebitCard
             cardNumber={cardNumber}
             cardHolderName={cardHolderName}
@@ -49,58 +43,23 @@ const Contents = () => {
           />
           <p className="font-semibold text-xl">Send Money</p>
 
-          <div class="bg-white flex justify-between rounded-lg shadow-lg overflow-hidden">
-            <div class="p-2 flex items-center">
-              <img
-                src={masterCardLogo}
-                alt="Mastercard Logo"
-                class="h-8 mr-2 bg-cover"
-              />
-              <h2 class=" text-gray-900">Debit</h2>
-            </div>
-            <div className="flex gap-2 mr-2 items-center">
-              <p className="font-semibold">
-                <span className="text-[#A4B4CB]">$</span> 10.680
-              </p>
-              <ChevronDownIcon className="h-3 w-3 text-gray-500" />
-            </div>
-          </div>
+          <DebitCardTile
+            logoSrc={masterCardLogo}
+            cardType={"Debit"}
+            cardAmount={"10.680"}
+            bordered={false}
+          />
 
-          <div>
-            <div class="p-2 flex items-center">
-              <img
-                src={userImage}
-                alt="Mastercard Logo"
-                class="h-4 mr-2 bg-cover rounded-full"
-              />
-              <h2 class=" text-gray-900">Enter the amount</h2>
-            </div>
-            <div class="bg-white p-2 flex justify-between rounded-lg shadow-lg overflow-hidden">
-              <div className="flex p-2 gap-2 mr-2 items-center">
-                <p className="font-semibold text-xl">
-                  <span className="text-[#A4B4CB]">$</span> 800.0
-                </p>
-              </div>
-              <div class="p-2 flex items-center">
-                <img
-                  src="https://media.istockphoto.com/id/1439544258/vector/usa-and-france-circle-flags-3d-icon-round-french-and-american-national-symbols-vector.jpg?s=612x612&w=0&k=20&c=NzaISF2XR1PRHLcRSDo3AIYd3L_t8r7v2GkW0-GFM4c="
-                  alt="Mastercard Logo"
-                  class="h-8 mr-2 bg-cover"
-                />
-              </div>
-            </div>
-          </div>
+          <CurrencyExchangeTile userImage={userImage} placeholder={"1,24"} />
 
           <div className="flex justify-between items-center pr-4">
             <div class="p-2 flex items-center">
-              <img
-                src={userImage}
-                alt="Mastercard Logo"
-                class="h-6 mr-2 bg-cover rounded-full"
-              />
-              <h2 className="font-semibold">Astrid Hayes</h2>
+              <AvatarGroup count={1} />
+              <h2 className="font-semibold ml-2">Astrid Hayes</h2>
             </div>
-            <PlusCircleIcon className="h-6 w-6 bg-[#DFF3FE] text-[#0177FB] rounded-full" />
+            <div className="h-6 w-6 bg-[#DFF3FE] text-[#0177FB] rounded-full flex justify-center items-center text-lg font-bold">
+              +
+            </div>
           </div>
 
           <button
@@ -112,75 +71,24 @@ const Contents = () => {
 
           <div className="p-4 flex flex-col gap-4 border-[0.5px] rounded-xl">
             <p className="font-semibold text-sm">Quick Transfer</p>
-            <div class="bg-white flex justify-between border-[0.5px] rounded-lg overflow-hidden">
-              <div class="flex items-center">
-                <img
-                  src={masterCardLogo}
-                  alt="Mastercard Logo"
-                  class="h-8 mr-2 bg-cover"
-                />
-                <h2 class=" text-gray-900">Debit</h2>
-              </div>
-              <div className="flex gap-2 mr-2 items-center">
-                <p className="font-semibold">
-                  <span className="text-[#A4B4CB]">$</span> 10,432
-                </p>
-                <ChevronDownIcon className="h-3 w-3 text-gray-500" />
-              </div>
-            </div>
 
-            <div className="bg-white border-[1px] border-[#819CFD] rounded-lg p-2">
-              <h2 class="p-2 text-gray-900">Enter amount</h2>
-              <div class="flex justify-between items-center overflow-hidden">
-                <p className="font-semibold text-lg">
-                  <span className="text-[#A4B4CB]">$</span> 124
-                </p>
-                <div class="flex items-center -space-x-2">
-                  <img
-                    class="w-6 h-6 border-2 border-white rounded-full"
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                    alt=""
-                  />
-                  <img
-                    class="w-6 h-6 border-2 border-white rounded-full"
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
+            <DebitCardTile
+              bordered={true}
+              cardAmount={"10,432"}
+              logoSrc={masterCardLogo}
+              cardType={"Debit"}
+            />
 
-            <div className="flex justify-between">
-              <div class="border-[0.5px] h-10 w-10 rounded-lg flex items-center justify-center">
-                <ArrowUpOnSquareIcon className="h-6 w-6 text-[#A789FF]" />
-              </div>
+            <CurrencyExchangeTile bordered={true} avatarCount={2} placeholder={'124'} />
 
-              <div class="border-[0.5px] h-10 w-10 rounded-lg flex items-center justify-center">
-                <ArrowUpOnSquareIcon className="h-6 w-6 text-[#83DEA4]" />
-              </div>
-
-              <div class="border-[0.5px] h-10 w-10 rounded-lg flex items-center justify-center">
-                <TicketIcon className="h-6 w-6 text-[#FCE37E]" />
-              </div>
-
-              <div class="border-[0.5px] h-10 w-10 rounded-lg flex items-center justify-center">
-                <SquaresPlusIcon className="h-6 w-6 text-[#436CFB]" />
-              </div>
-            </div>
-
-            <div className="flex justify-between font-semibold text-xs">
-              <span className="text-[#798BA3]">Send</span>
-              <span className="text-[#798BA3]">Receive</span>
-              <span className="text-[#798BA3]">Invoicing</span>
-              <span className="text-[#798BA3]">More</span>
-            </div>
+            <BankActionsTile />
           </div>
         </div>
 
-        <div class="flex flex-col flex-auto gap-4 px-4 rounded-lg">
-          <div className="flex flex-wrap gap-8">
-            <div className="flex flex-col gap-4">
-              <div className="flex justify-between items-center lg:w-[550px]">
+        <div class="flex flex-col flex-auto gap-4 px-2 rounded-lg">
+          <div className="flex flex-wrap">
+            <div className="flex w-2/3 flex-col gap-4 pr-4">
+              <div className="flex justify-between items-center">
                 <h2 className="font-semibold">Money Flow</h2>
                 <div className="flex gap-4">
                   <ArrowTrendingUpIcon className="h-6 w-6 text-gray-500" />
@@ -188,7 +96,7 @@ const Contents = () => {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center lg:w-[550px]">
+              <div className="flex justify-between items-center">
                 <div className="flex gap-4">
                   <div className="flex gap-2">
                     <ArrowTrendingUpIcon className="h-6 w-6 p-1 text-white bg-[#0177FB] rounded-full" />
@@ -205,79 +113,10 @@ const Contents = () => {
                 </div>
               </div>
 
-              <div>
-                <img className="w-80 lg:w-[550px]" src={chart} alt="chart" />
-              </div>
+              <ChartArea />
             </div>
-            <div className="w-[360px] flex flex-col gap-6">
-              <div className="flex justify-between items-center">
-                <h2 className="font-semibold text-sm">Recent Contacts</h2>
-                <div className="flex gap-4">
-                  <PencilIcon className="h-4 w-4 text-gray-500" />
-                  <MagnifyingGlassIcon className="h-4 w-4 text-[#0177FB]" />
-                </div>
-              </div>
-              <p className="text-xs text-gray-500">18 recipients</p>
-              <div className="flex justify-between items-center">
-                {[...Array(5)].map((_, index) => (
-                  <img
-                    className="w-8 h-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                    alt=""
-                    key={index}
-                  />
-                ))}
-                <ChevronRightIcon className="h-6 w-6 text-gray-500" />
-              </div>
 
-              <div class="w-full p-6 flex flex-col gap-4 rounded-lg shadow-lg">
-                <h5 class="text-lg ">Group Party</h5>
-                <div className="flex justify-between items-center">
-                  <div className="flex gap-2">
-                    <div class="flex -space-x-2">
-                      <img
-                        class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800"
-                        src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                        alt=""
-                      />
-
-                      <img
-                        class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800"
-                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                        alt=""
-                      />
-
-                      <img
-                        class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGF2YXRhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
-                        alt=""
-                      />
-                    </div>
-                    <span class="flex items-center justify-center w-8 h-8 border-2 text-xs font-medium border-dotted border-[#0176FA] text-[#0176FA] rounded-full">
-                      +5
-                    </span>
-                  </div>
-                  <div class="relative">
-                    <ChatBubbleOvalLeftIcon className="h-6 w-6 text-gray-500" />
-                    <span class="top-0 left-4 absolute w-3.5 h-3.5 bg-[#0176FA] rounded-full"></span>
-                  </div>
-                </div>
-                <div class="flex justify-between items-center gap-8 pt-2">
-                  <div class="w-full rounded-lg inline-flex gap-2 items-center py-2.5">
-                    <img
-                      className="w-9 h-9 rounded-full"
-                      src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                      alt=""
-                    />
-                    <div class="text-left">
-                      <div class="mb-1 text-sm font-semibold">Dakota Milk</div>
-                      <div class="-mt-1 text-xs">$420.00</div>
-                    </div>
-                  </div>
-                  <ChevronRightIcon className="h-4 w-4 text-gray-500" />
-                </div>
-              </div>
-            </div>
+            <RecentActivities />
           </div>
 
           <div className="w-full flex flex-col gap-8">
