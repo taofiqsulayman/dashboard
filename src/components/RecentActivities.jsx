@@ -10,7 +10,7 @@ import AvatarGroup from './AvatarGroup';
 const RecentActivities = () => {
   return (
     <>
-      <div className="flex flex-grow flex-col gap-6 p-2">
+      <div className="hidden lg:flex flex-grow flex-col gap-6 p-2">
         <div className="flex justify-between items-center">
           <h2 className="font-semibold text-sm">Recent Contacts</h2>
           <div className="flex gap-4">

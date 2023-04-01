@@ -23,7 +23,6 @@ const ChartArea = () => {
         ],
         labels: {
           style: {
-            fontFamily: "Gilroy-SemiBold",
             fontSize: "9px",
             lineHeight: "9px",
             color: "#A5B4CB",
@@ -46,7 +45,6 @@ const ChartArea = () => {
             return value.toString();
           },
           style: {
-            fontFamily: "Gilroy-SemiBold",
             fontSize: "10px",
             lineHeight: "9px",
             color: "#A5B4CB",

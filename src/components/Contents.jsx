@@ -6,10 +6,6 @@ import {
   ChartBarSquareIcon,
   ChevronRightIcon,
   ChevronDownIcon,
-  UsersIcon,
-  BanknotesIcon,
-  GiftIcon,
-  ClockIcon,
 } from "@heroicons/react/24/outline";
 import DebitCard from "./DebitCard";
 import debitCardBg from "../assets/debitcard-bg.png";
@@ -20,6 +16,8 @@ import AvatarGroup from "./AvatarGroup";
 import BankActionsTile from "./BankActionsTile";
 import ChartArea from "./ChartArea";
 import RecentActivities from "./RecentActivities";
+import Tables from "./Tables";
+import Statistics from "./Statistics";
 
 const Contents = () => {
   const cardNumber = "1234 5678 9012 3456";
@@ -27,6 +25,36 @@ const Contents = () => {
   const expiryDate = "12/23";
   const cardType = "Visa";
   const backgroundImage = debitCardBg;
+
+  const transactions = [
+    {
+      name: "Bitcoin Transactions",
+      date: "Jan 16, 2020",
+      image:
+        "https://static.vecteezy.com/system/resources/previews/008/505/801/original/bitcoin-logo-color-illustration-png.png",
+      status: "Success",
+      cardNumber: "*****45242",
+      value: "-$853.00",
+    },
+    {
+      name: "Sent to Antonia",
+      date: "Jan 16, 2020",
+      image:
+        "https://media.istockphoto.com/id/1344327532/photo/studio-portrait-of-attractive-19-year-old-woman-with-brown-hair.jpg?b=1&s=170667a&w=0&k=20&c=qPtuG5hKcC8vva8y_HC9Xm5z31DeQG4LTI6RuSXJ6wE=",
+      status: "Pending",
+      cardNumber: "*****87212",
+      value: "-$153.00",
+    },
+    {
+      name: "Withdraw Paypal",
+      date: "Jan 16, 2020",
+      image:
+        "https://banner2.cleanpng.com/20180418/xie/kisspng-paypal-logo-e-commerce-payment-system-paypal-5ad78137f1e9c2.9153968515240727599909.jpg",
+      status: "Success",
+      cardNumber: "*****36275",
+      value: "+$223.00",
+    },
+  ];
 
   return (
     <div class="h-full w-full pr-8">
@@ -54,8 +82,12 @@ const Contents = () => {
 
           <div className="flex justify-between items-center pr-4">
             <div class="p-2 flex items-center">
-              <AvatarGroup count={1} />
-              <h2 className="font-semibold ml-2">Astrid Hayes</h2>
+              <img
+                class="w-8 h-8 rounded-full"
+                src={userImage}
+                alt="transaction image"
+              />
+              <h2 className="font-semibold px-4">Astrid Hayes</h2>
             </div>
             <div className="h-6 w-6 bg-[#DFF3FE] text-[#0177FB] rounded-full flex justify-center items-center text-lg font-bold">
               +
@@ -79,13 +111,17 @@ const Contents = () => {
               cardType={"Debit"}
             />
 
-            <CurrencyExchangeTile bordered={true} avatarCount={2} placeholder={'124'} />
+            <CurrencyExchangeTile
+              bordered={true}
+              avatarCount={2}
+              placeholder={"124"}
+            />
 
             <BankActionsTile />
           </div>
         </div>
 
-        <div class="flex flex-col flex-auto gap-4 px-2 rounded-lg">
+        <div class="flex flex-col flex-auto gap-8 px-2 rounded-lg">
           <div className="flex flex-wrap">
             <div className="flex w-2/3 flex-col gap-4 pr-4">
               <div className="flex justify-between items-center">
@@ -127,109 +163,15 @@ const Contents = () => {
                 <ChevronRightIcon className="h-3 w-3 text-gray-500" />
               </div>
             </div>
-
-            <div class="bg-white flex gap-2 lg:justify-between items-center text-base overflow-hidden">
-              <div class="flex items-center">
-                <img
-                  src="https://static.vecteezy.com/system/resources/previews/008/505/801/original/bitcoin-logo-color-illustration-png.png"
-                  alt="Logo"
-                  class="h-8 mr-2 bg-cover"
-                />
-                <h2 class=" text-gray-900">Bitcoin Transactions</h2>
-              </div>
-              <p className="hidden lg:flex">Jan 16, 2020</p>
-              <p className="hidden lg:flex">*****45242</p>
-              <p>-$853.00</p>
-              <p className="text-[#61BB84] bg-[#EBFFF3] px-2 py-1">Success</p>
-            </div>
-
-            <div class="bg-white flex gap-2 lg:justify-between items-center text-base overflow-hidden">
-              <div class="flex items-center">
-                <img
-                  src="https://media.istockphoto.com/id/1344327532/photo/studio-portrait-of-attractive-19-year-old-woman-with-brown-hair.jpg?b=1&s=170667a&w=0&k=20&c=qPtuG5hKcC8vva8y_HC9Xm5z31DeQG4LTI6RuSXJ6wE="
-                  alt="Logo"
-                  class="h-8 mr-2 bg-cover rounded-full"
-                />
-                <h2 class=" text-gray-900">Sent to antonia</h2>
-              </div>
-              <p className="ml-8 hidden lg:flex">Jan 16, 2020</p>
-              <p className="hidden lg:flex">*****87212</p>
-              <p>-$153.00</p>
-              <p className="text-[#FFAA90] bg-[#FFF1ED] px-2 py-1">Pending</p>
-            </div>
-
-            <div class="bg-white flex gap-2 lg:justify-between items-center text-base overflow-hidden">
-              <div class="flex items-center">
-                <img
-                  src="https://banner2.cleanpng.com/20180418/xie/kisspng-paypal-logo-e-commerce-payment-system-paypal-5ad78137f1e9c2.9153968515240727599909.jpg"
-                  alt="Logo"
-                  class="h-8 mr-2 bg-cover rounded-full"
-                />
-                <h2 class=" text-gray-900">Withdraw Paypal</h2>
-              </div>
-              <p className="ml-6 hidden lg:flex">Jan 16, 2020</p>
-              <p className="hidden lg:flex">*****36275</p>
-              <p>+$223.00</p>
-              <p className="text-[#61BB84] bg-[#EBFFF3] px-2 py-1">Success</p>
-            </div>
+            <Tables transactions={transactions} />
           </div>
 
-          <div class="w-full hidden lg:flex p-10 bg-white border border-gray-200 rounded-lg shadow">
-            <h5 class="mb-2 text-xl font-semibold">Statistics</h5>
-            <div class="flex justify-between items-center gap-8 pt-8">
-              <a
-                href="#"
-                class="w-full sm:w-auto rounded-lg inline-flex gap-2 items-center justify-center py-2.5"
-              >
-                <div className="flex items-center justify-center rounded-full h-10 w-10 bg-[#EFECFD] text-[#7468E4]">
-                  <UsersIcon className="h-6 w-6" />
-                </div>
-                <div class="text-left">
-                  <div class="mb-1 text-sm font-semibold">220k</div>
-                  <div class="-mt-1 text-xs">Customers</div>
-                </div>
-              </a>
-
-              <a
-                href="#"
-                class="w-full sm:w-auto rounded-lg inline-flex gap-2 items-center justify-center py-2.5"
-              >
-                <div className="flex items-center justify-center rounded-full h-10 w-10 bg-[#E4F8FB] text-[#51D5EC]">
-                  <BanknotesIcon className="h-6 w-6" />
-                </div>
-                <div class="text-left">
-                  <div class="mb-1 text-sm font-semibold">230k</div>
-                  <div class="-mt-1 text-xs">Remittance</div>
-                </div>
-              </a>
-
-              <a
-                href="#"
-                class="w-full sm:w-auto rounded-lg inline-flex gap-2 items-center justify-center py-2.5"
-              >
-                <div className="flex items-center justify-center rounded-full h-10 w-10 bg-[#E5F7ED] text-[#22B573]">
-                  <GiftIcon className="h-6 w-6" />
-                </div>
-                <div class="text-left">
-                  <div class="mb-1 text-sm font-semibold">270k</div>
-                  <div class="-mt-1 text-xs">Donations</div>
-                </div>
-              </a>
-
-              <a
-                href="#"
-                class="w-full sm:w-auto rounded-lg inline-flex gap-2 items-center justify-center py-2.5"
-              >
-                <div className="flex items-center justify-center rounded-full h-10 w-10 bg-[#FDF1E2] text-[#FFB648]">
-                  <ClockIcon className="h-6 w-6" />
-                </div>
-                <div class="text-left">
-                  <div class="mb-1 text-sm font-semibold">130k</div>
-                  <div class="-mt-1 text-xs">Watchtime</div>
-                </div>
-              </a>
-            </div>
-          </div>
+          <Statistics
+            customers={"220k"}
+            remittance={"230k"}
+            donations={"270k"}
+            watchtime={"130k"}
+          />
         </div>
       </div>
     </div>
